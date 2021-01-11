@@ -1,0 +1,1119 @@
+@font-face {
+	font-family: "Gilroy-ExtraBold";
+	src: url("/fonts/Gilroy-ExtraBold.eot");
+	src: local("Gilroy ExtraBold"), local("Gilroy-ExtraBold"),
+		url("/fonts/Gilroy-ExtraBold.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-ExtraBold.woff") format("woff"),
+		url("/fonts/Gilroy-ExtraBold.ttf") format("truetype");
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	src: url("/fonts/Gilroy-Heavy.eot");
+	src: local("Gilroy Heavy"), local("Gilroy-Heavy"),
+		url("/fonts/Gilroy-Heavy.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-Heavy.woff") format("woff"),
+		url("/fonts/Gilroy-Heavy.ttf") format("truetype");
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	src: url("/fonts/Gilroy-LightItalic.eot");
+	src: local("Gilroy Light Italic"), local("Gilroy-LightItalic"),
+		url("/fonts/Gilroy-LightItalic.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-LightItalic.woff") format("woff"),
+		url("/fonts/Gilroy-LightItalic.ttf") format("truetype");
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	src: url("/fonts/Gilroy-ThinItalic.eot");
+	src: local("Gilroy Thin Italic"), local("Gilroy-ThinItalic"),
+		url("/fonts/Gilroy-ThinItalic.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-ThinItalic.woff") format("woff"),
+		url("/fonts/Gilroy-ThinItalic.ttf") format("truetype");
+	font-weight: 100;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	src: url("/fonts/Gilroy-BlackItalic.eot");
+	src: local("Gilroy Black Italic"), local("Gilroy-BlackItalic"),
+		url("/fonts/Gilroy-BlackItalic.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-BlackItalic.woff") format("woff"),
+		url("/fonts/Gilroy-BlackItalic.ttf") format("truetype");
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	src: url("/fonts/Gilroy-BoldItalic.eot");
+	src: local("Gilroy Bold Italic"), local("Gilroy-BoldItalic"),
+		url("/fonts/Gilroy-BoldItalic.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-BoldItalic.woff") format("woff"),
+		url("/fonts/Gilroy-BoldItalic.ttf") format("truetype");
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	src: url("/fonts/Gilroy-SemiBold.eot");
+	src: local("Gilroy SemiBold"), local("Gilroy-SemiBold"),
+		url("/fonts/Gilroy-SemiBold.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-SemiBold.woff") format("woff"),
+		url("/fonts/Gilroy-SemiBold.ttf") format("truetype");
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Gilroy";
+	src: url("/fonts/Gilroy-UltraLightItalic.eot");
+	src: local("Gilroy UltraLight Italic"), local("Gilroy-UltraLightItalic"),
+		url("/fonts/Gilroy-UltraLightItalic.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-UltraLightItalic.woff") format("woff"),
+		url("/fonts/Gilroy-UltraLightItalic.ttf") format("truetype");
+	font-weight: 200;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	src: url("/fonts/Gilroy-SemiBoldItalic.eot");
+	src: local("Gilroy SemiBold Italic"), local("Gilroy-SemiBoldItalic"),
+		url("/fonts/Gilroy-SemiBoldItalic.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-SemiBoldItalic.woff") format("woff"),
+		url("/fonts/Gilroy-SemiBoldItalic.ttf") format("truetype");
+	font-weight: 600;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Gilroy-Light";
+	src: url("/fonts/Gilroy-Light.eot");
+	src: local("Gilroy Light"), local("Gilroy-Light"),
+		url("/fonts/Gilroy-Light.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-Light.woff") format("woff"),
+		url("/fonts/Gilroy-Light.ttf") format("truetype");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	src: url("/fonts/Gilroy-MediumItalic.eot");
+	src: local("Gilroy Medium Italic"), local("Gilroy-MediumItalic"),
+		url("/fonts/Gilroy-MediumItalic.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-MediumItalic.woff") format("woff"),
+		url("/fonts/Gilroy-MediumItalic.ttf") format("truetype");
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	src: url("/fonts/Gilroy-ExtraBoldItalic.eot");
+	src: local("Gilroy ExtraBold Italic"), local("Gilroy-ExtraBoldItalic"),
+		url("/fonts/Gilroy-ExtraBoldItalic.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-ExtraBoldItalic.woff") format("woff"),
+		url("/fonts/Gilroy-ExtraBoldItalic.ttf") format("truetype");
+	font-weight: 800;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Gilroy-Regular";
+	src: url("/fonts/Gilroy-Regular.eot");
+	src: local("Gilroy Regular"), local("Gilroy-Regular"),
+		url("/fonts/Gilroy-Regular.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-Regular.woff") format("woff"),
+		url("/fonts/Gilroy-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Gilroy";
+	src: url("/fonts/Gilroy-HeavyItalic.eot");
+	src: local("Gilroy Heavy Italic"), local("Gilroy-HeavyItalic"),
+		url("/fonts/Gilroy-HeavyItalic.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-HeavyItalic.woff") format("woff"),
+		url("/fonts/Gilroy-HeavyItalic.ttf") format("truetype");
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Gilroy-Medium";
+	src: url("/fonts/Gilroy-Medium.eot");
+	src: local("Gilroy Medium"), local("Gilroy-Medium"),
+		url("/fonts/Gilroy-Medium.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-Medium.woff") format("woff"),
+		url("/fonts/Gilroy-Medium.ttf") format("truetype");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	src: url("/fonts/Gilroy-RegularItalic.eot");
+	src: local("Gilroy Regular Italic"), local("Gilroy-RegularItalic"),
+		url("/fonts/Gilroy-RegularItalic.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-RegularItalic.woff") format("woff"),
+		url("/fonts/Gilroy-RegularItalic.ttf") format("truetype");
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	src: url("/fonts/Gilroy-UltraLight.eot");
+	src: local("Gilroy UltraLight"), local("Gilroy-UltraLight"),
+		url("/fonts/Gilroy-UltraLight.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-UltraLight.woff") format("woff"),
+		url("/fonts/Gilroy-UltraLight.ttf") format("truetype");
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	src: url("/fonts/Gilroy-Bold.eot");
+	src: local("Gilroy Bold"), local("Gilroy-Bold"),
+		url("/fonts/Gilroy-Bold.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-Bold.woff") format("woff"),
+		url("/fonts/Gilroy-Bold.ttf") format("truetype");
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	src: url("/fonts/Gilroy-Thin.eot");
+	src: local("Gilroy Thin"), local("Gilroy-Thin"),
+		url("/fonts/Gilroy-Thin.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-Thin.woff") format("woff"),
+		url("/fonts/Gilroy-Thin.ttf") format("truetype");
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Gilroy";
+	src: url("/fonts/Gilroy-Black.eot");
+	src: local("Gilroy Black"), local("Gilroy-Black"),
+		url("/fonts/Gilroy-Black.eot?#iefix") format("embedded-opentype"),
+		url("/fonts/Gilroy-Black.woff") format("woff"),
+		url("/fonts/Gilroy-Black.ttf") format("truetype");
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Avantgard";
+	src: url("/fonts/avantgardegothicc-bold.otf");
+	src: local("Gilroy Black"), local("Gilroy-Black"),
+		url("/fonts/Gilroy-Black.eot?#iefix") format("embedded-opentype");
+	font-weight: 700;
+	font-style: normal;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+	outline: none;
+}
+body {
+	margin: 0;
+	/*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;*/
+	//background-color: #121212;
+	//position: relative;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+//Margins
+.margin_top_80 {
+	margin-top: 80px;
+}
+
+.wrapper {
+	max-width: 1440px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 2;
+	margin-bottom: -1px;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	border: none;
+	position: relative;
+	outline: none;
+}
+
+.light_text {
+  color: #fff;
+  font font {
+    color: #fff;
+  }
+}
+
+.App {
+	min-height: 100vh;
+	width: 100%;
+}
+.skiptranslate {
+  display: none !important;
+  visibility: hidden !important;
+  background-color: transparent !important;
+  border: none;
+  box-shadow: none;
+}
+.page {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  &.page_fix {
+    top: 0 !important;
+    position: static !important;
+  }
+}
+#goog-gt-tt {
+  display: none !important;
+  visibility: hidden !important;
+  background-color: transparent !important;
+  border: none;
+  box-shadow: none;
+}
+.goog-tooltip {
+  display: none !important;
+  visibility: hidden !important;
+  background-color: transparent !important;
+  border: none;
+  box-shadow: none;
+}
+
+/* @media (max-width: 1536px) {
+
+}
+
+@media (max-width: 1366px) {
+	.wrapper {
+		max-width: 1200px !important;
+	}
+}
+
+@media (max-width: 1200px) {
+	.wrapper {
+		max-width: 1000px !important;
+	}
+}
+
+@media (max-width: 1024px) {
+	.wrapper {
+		max-width: 850px !important;
+	}
+}
+
+@media (max-width: 800px) {
+	.wrapper {
+		max-width: 650px !important;
+	}
+	nav {
+		ul {
+			height: 80px !important;
+			a {
+				font-size: 20px !important;
+			}
+		}
+	}
+
+	footer {
+		section ul {
+			height: 80px !important;
+
+			img {
+				width: 50px !important;
+			}
+		}
+	}
+
+	.shift_description {
+		margin: 0 20px !important;
+		margin-top: 25px !important;
+
+		font-size: 20px !important;
+	}
+
+	form {
+		max-width: 600px !important;
+	}
+
+	.gradient_title {
+		margin-left: 60px !important;
+
+		h2 {
+			font-size: 60px !important;
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.wrapper {
+		max-width: 390px !important;
+	}
+
+	nav ul {
+		display: flex !important;
+		flex-direction: column !important;
+		height: auto !important;
+		padding: 30px 0 !important;
+
+		a {
+			font-size: 26px !important;
+		}
+
+		li {
+			margin-top: 30px !important;
+		}
+
+		li:first-child {
+			margin-top: 0 !important;
+		}
+	}
+
+	footer section ul {
+		flex-wrap: wrap;
+		height: auto !important;
+		padding-bottom: 65px;
+
+		li {
+			text-align: center;
+			flex-basis: 33%;
+			margin-top: 35px;
+		}
+	}
+}
+
+@media (max-width: 410px) {
+	.wrapper {
+		max-width: 300px !important;
+	}
+} */
+@media (max-width: 1536px) {
+  .index_advantages_item {
+    height: 480px !important;
+
+    .index_advantages_item_number {
+      font-size: 155px !important;
+      font font {
+        font-size: 155px !important;
+      }
+    }
+
+    .index_advantages_icon {
+      margin-top: 10px !important;
+      height: 70px;
+    }
+
+    .index_advantages_icon:nth-child(2n + 1) {
+      margin-bottom: 10px !important;
+    }
+  }
+
+  .index_main_screen_name_container {
+    padding-top: 0px;
+
+    .index_main_screen_text {
+      margin-top: 65px;
+    }
+  }
+}
+
+@media (max-width: 1366px) {
+  .wrapper {
+    max-width: 1200px !important;
+  }
+  /* .wrapper {
+    max-width: 1366px !important;
+  } */
+
+  .gradient_title {
+    margin-left: 130px !important;
+  }
+
+  .index_why_we {
+    h2 {
+      margin-left: 130px !important;
+    }
+
+    .index_why_we_description {
+      margin-left: 200px !important;
+    }
+  }
+
+  .index_main_screen_name_container {
+    //padding-top: 50px;
+
+    h1 {
+      font-size: 60px;
+      font font {
+        font-size: 60px;
+      }
+    }
+
+    .index_main_screen_text {
+      margin-top: 50px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .wrapper {
+    max-width: 1000px !important;
+  }
+  /* .wrapper {
+    max-width: 1200px !important;
+  } */
+
+  .index_main_screen {
+    padding-top: 40px !important;
+  }
+
+  .index_main_screen_img_container {
+    img {
+      width: 350px !important;
+    }
+  }
+
+  .index_main_screen_name_container {
+    //padding-top: 45px !important;
+
+    h1 {
+      font-size: 55px;
+      font font {
+        font-size: 55px;
+      }
+    }
+
+    .index_main_screen_text {
+      margin-top: 40px !important;
+    }
+
+    .main_screen_button {
+      margin-top: 30px !important;
+    }
+  }
+
+  .index_advantages {
+    flex-wrap: wrap !important;
+
+    .index_advantages_item {
+      flex-basis: 33% !important;
+      height: 700px !important;
+    }
+  }
+
+  .index_contacts {
+    h2 {
+      margin-left: 130px !important;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    max-width: 850px !important;
+  }
+  /* .wrapper {
+    max-width: 1024px !important;
+  } */
+
+  .shift_description {
+    margin-top: 45px !important;
+  }
+
+  .index_main_screen_img_container {
+    display: none !important;
+  }
+
+  /* .index_main_screen_name_container {
+    //padding-top: 0!important;
+  } */
+
+  .index_advantages {
+    margin-top: 45px !important;
+  }
+
+  .gradient_title {
+    margin-left: 85px !important;
+
+    h2 {
+      font-size: 80px !important;
+      font font {
+        font-size: 80px !important;
+      }
+    }
+  }
+
+  .index_advantages .index_advantages_item {
+    height: 615px !important;
+  }
+
+  .index_why_we .index_why_we_description {
+    padding-left: 35px;
+    padding-right: 60px;
+    margin-left: 140px !important;
+  }
+
+  .index_why_we {
+    h2 {
+      margin-left: 80px !important;
+    }
+
+    .index_why_we_description {
+      margin-left: 80px !important;
+    }
+  }
+
+  input {
+    padding-left: 20px !important;
+  }
+
+  form {
+    max-width: 900px !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .wrapper {
+    max-width: 650px !important;
+  }
+  /* .wrapper {
+    max-width: 800px !important;
+  } */
+
+  .fixed_buttons_right {
+    width: 50px;
+
+    button {
+      width: 30px !important;
+    }
+
+    .lang_button {
+      top: 10px;
+    }
+
+    /* .mail_button {
+      //bottom: 30px;
+    }
+
+    .call_button {
+      //bottom: 90px;
+    } */
+  }
+
+  .fixed_buttons_left {
+    width: 50px;
+
+    #menu_button {
+      height: 80px;
+
+      .side_menu_line {
+        height: 55px;
+      }
+    }
+  }
+
+  .index_main_screen_name_container h1 {
+    font-size: 45px;
+    font font {
+      font-size: 45px;
+    }
+  }
+
+  .index_main_screen_name_container .main_screen_button {
+    font-size: 25px;
+    font font {
+      font-size: 25px;
+    }
+  }
+
+  .gradient_title h2 {
+    font-size: 60px !important;
+    font font {
+      font-size: 60px !important;
+    }
+  }
+
+  .index_why_we {
+    padding: 30px 0 50px 0;
+
+    h2 {
+      font-size: 70px !important;
+      margin-bottom: 20px;
+      font font {
+        font-size: 70px !important;
+      }
+    }
+
+    .index_why_we_description {
+      font-size: 18px;
+      font font {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .index_main_screen {
+    padding-top: 20px !important;
+  }
+
+  .index_main_screen_name_container {
+    padding-top: 0 !important;
+  }
+
+  .index_main_screen_logo_container {
+    width: 160px;
+    margin-right: 35px;
+
+    img {
+      width: 130px;
+    }
+  }
+
+  .index_main_screen_name_container .index_main_screen_text {
+    margin-top: 25px !important;
+    font-size: 18px !important ;
+    font font {
+      font-size: 18px !important ;
+    }
+  }
+
+  .index_main_screen_name_container .main_screen_button {
+    font-size: 20px;
+    padding: 20px 40px !important;
+    font font {
+      font-size: 20px;
+    }
+  }
+
+  .index_advantages_screen {
+    padding: 30px 0 !important;
+
+    .index_advantages {
+      margin-top: 25px !important;
+    }
+
+    .index_advantages_item {
+      height: 480px !important;
+    }
+  }
+
+  .index_contacts {
+    padding: 30px 0;
+
+    h2 {
+      margin-left: 80px !important;
+      font-size: 45px;
+      margin-bottom: 30px;
+      font font {
+        font-size: 45px;
+      }
+    }
+
+    input {
+      height: 50px;
+      padding-left: 10px;
+      font-size: 18px;
+      font font {
+        font-size: 18px;
+      }
+    }
+
+    textarea {
+      margin-top: 20px;
+      font-size: 18px;
+      padding-left: 10px;
+      height: 120px;
+      font font {
+        font-size: 18px;
+      }
+    }
+
+    .error_form_msg {
+      font-size: 18px !important;
+      font font {
+        font-size: 18px !important;
+      }
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 20px 40px !important;
+      font-size: 20px;
+      font font {
+        font-size: 20px;
+      }
+    }
+  }
+
+  nav {
+    ul {
+      height: 80px !important;
+      a {
+        font-size: 20px !important;
+        font font {
+          font-size: 20px !important;
+        }
+      }
+    }
+  }
+
+  footer {
+    section ul {
+      height: 80px !important;
+
+      img {
+        width: 50px !important;
+      }
+    }
+  }
+
+  .shift_description {
+    margin: 0 20px !important;
+    margin-top: 25px !important;
+
+    font-size: 20px !important;
+    font font {
+      font-size: 20px !important;
+    }
+  }
+
+  form {
+    max-width: 600px !important;
+  }
+
+  .gradient_title {
+    margin-left: 60px !important;
+
+    h2 {
+      font-size: 60px !important;
+      font font {
+        font-size: 60px !important;
+      }
+    }
+  }
+
+  .fixed_buttons_right .popup_nav_list {
+    right: 25px;
+    top: 25px;
+  }
+
+  .fixed_buttons_right .popup_nav_list__bottom {
+    top: unset;
+    bottom: -40px;
+  }
+}
+
+@media (max-width: 550px) {
+  .wrapper {
+    max-width: 390px !important;
+  }
+  /* .wrapper {
+    max-width: 550px !important;
+  } */
+
+  .fixed_buttons_left {
+    #menu_button {
+      left: 25px;
+      top: 15px;
+      width: 30px;
+      height: 45px;
+      transform: rotate(-90deg);
+
+      .side_menu_line {
+        width: 5px;
+        height: 45px;
+      }
+    }
+  }
+
+  .shift_description {
+    margin-top: 10px !important;
+
+    &::before {
+      width: 3px !important;
+      left: -15px !important;
+    }
+  }
+
+  .index_main_screen_logo_container {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .index_main_screen_content_container {
+    flex-direction: column;
+    align-items: center;
+
+    .index_main_screen_name_container {
+      padding-top: 20px !important;
+      text-align: center;
+
+      h2 {
+        font-size: 23px;
+        font font {
+          font-size: 23px;
+        }
+      }
+    }
+  }
+
+  .gradient_title {
+    //margin-left: 60px !important;
+    margin-left: 60px !important;
+
+    h2 {
+      font-size: 40px !important;
+      font font {
+        font-size: 40px !important;
+      }
+    }
+  }
+
+  .index_advantages {
+    .index_advantages_item {
+      flex-basis: 50% !important;
+
+      .index_advantages_item_number {
+        font-size: 100px !important;
+        font font {
+          font-size: 100px !important;
+        }
+      }
+
+      .index_advantages_item_icon {
+        padding-right: 20px !important;
+      }
+
+      .index_advantages_item_title {
+        font-size: 20px !important;
+        font font {
+          font-size: 20px !important;
+        }
+      }
+
+      img {
+        height: 50px;
+      }
+    }
+
+    .index_advantages_item:nth-child(2n) {
+      .index_advantages_item_icon {
+        padding-left: 20px !important;
+        padding-right: 0 !important;
+      }
+    }
+  }
+
+  .index_why_we {
+    h2 {
+      margin-left: 60px !important;
+      font-size: 40px !important;
+      font font {
+        font-size: 40px !important;
+      }
+    }
+
+    .index_why_we_description {
+      margin-left: 60px !important;
+      padding-left: 15px;
+      border-width: 3px !important;
+    }
+  }
+
+  .index_contacts {
+    h2 {
+      margin-left: 60px !important;
+      font-size: 26px;
+      font font {
+        font-size: 26px;
+      }
+    }
+
+    .index_input_container {
+      flex-direction: column;
+
+      input {
+        height: 80px;
+        width: 100%;
+        margin-bottom: 25px;
+        font-size: 22px;
+        font font {
+          font-size: 22px;
+        }
+      }
+    }
+
+    button {
+      width: 100% !important;
+      font-size: 24px !important;
+      font font {
+        font-size: 24px !important;
+      }
+    }
+  }
+
+  nav ul {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    padding: 30px 0 !important;
+
+    a {
+      font-size: 26px !important;
+      font font {
+        font-size: 26px !important;
+      }
+    }
+
+    li {
+      margin-top: 30px !important;
+    }
+
+    li:first-child {
+      margin-top: 0 !important;
+    }
+  }
+
+  footer section ul {
+    flex-wrap: wrap;
+    height: auto !important;
+    padding-bottom: 65px;
+
+    li {
+      text-align: center;
+      flex-basis: 33%;
+      margin-top: 35px;
+    }
+  }
+
+  .fixed_buttons_right .lang_button {
+    //right: 15px;
+    top: -50px;
+  }
+
+  .fixed_buttons_right button {
+    width: 40px !important;
+  }
+
+  .fixed_buttons_right .popup_nav_list {
+    top: -40px;
+  }
+
+  .fixed_buttons_right .popup_nav_list {
+    top: unset;
+  }
+}
+
+@media (max-width: 410px) {
+  .wrapper {
+    max-width: 300px !important;
+  }
+  /* .wrapper {
+    max-width: 410px !important;
+  } */
+
+  .shift_description {
+    margin: 0 !important;
+    margin-left: 15px !important;
+
+    font-size: 16px !important;
+    font font {
+      font-size: 16px !important;
+    }
+  }
+
+  .index_main_screen_name_container {
+    h1 {
+      font-size: 32px;
+      font font {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .gradient_title {
+    margin-left: 30px !important;
+
+    h2 {
+      font-size: 35px !important;
+      font font {
+        font-size: 35px !important;
+      }
+    }
+  }
+
+  .index_advantages_screen .index_advantages {
+    .index_advantages_item {
+      height: 370px !important;
+    }
+
+    .index_advantages_item_title {
+      font-size: 16px !important;
+      font font {
+        font-size: 16px !important;
+      }
+    }
+  }
+
+  .index_why_we {
+    h2 {
+      margin-left: 0 !important;
+    }
+
+    .index_why_we_description {
+      margin-left: 20px !important;
+      padding-right: 10px;
+    }
+  }
+
+  .index_contacts {
+    h2 {
+      margin-left: 0 !important;
+    }
+
+    input {
+      font-size: 16px !important;
+      font font {
+        font-size: 16px !important;
+      }
+    }
+
+    textarea {
+      font-size: 16px !important;
+      font font {
+        font-size: 16px !important;
+      }
+    }
+  }
+}

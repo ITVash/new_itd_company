@@ -140,7 +140,7 @@ const Clickbait: React.FC<IClickbaitProps> = ({
 											id='c1'
 											name='cc'
 											className='general'
-											onChange={(e) => {
+											onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
 												e.target.checked
 													? maping.get("list1")!.set("Промо-сайт", "Промо-сайт")
 													: maping.get("list1")!.delete("Промо-сайт")
@@ -156,7 +156,7 @@ const Clickbait: React.FC<IClickbaitProps> = ({
 											id='c2'
 											name='cc'
 											className='general'
-											onChange={(e) => {
+											onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
 												e.target.checked
 													? maping
 															.get("list1")
@@ -174,7 +174,7 @@ const Clickbait: React.FC<IClickbaitProps> = ({
 											id='c3'
 											name='cc'
 											className='general'
-											onChange={(e) => {
+											onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
 												e.target.checked
 													? maping
 															.get("list1")
@@ -192,7 +192,7 @@ const Clickbait: React.FC<IClickbaitProps> = ({
 											id='c4'
 											name='cc'
 											className='general'
-											onChange={(e) => {
+											onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
 												e.target.checked
 													? maping
 															.get("list1")
@@ -211,7 +211,7 @@ const Clickbait: React.FC<IClickbaitProps> = ({
 											cols={30}
 											rows={10}
 											value={maping.get("list1").get("Text")}
-											onChange={(e) => {
+											onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
 												maping.get("list1").set("Text", e.target.value)
 											}}></textarea>
 									</div>

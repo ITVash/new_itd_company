@@ -64,7 +64,11 @@ const Portfolio: React.FC = observer(
 				console.error(`Ошибка: ${error}`)
 			}
 		}
-		console.log(portfolio, current)
+		const cancelPortfolio = (): void => {
+			setCurrent({ desc: "" })
+			setPreview(undefined)
+			setProj(undefined)
+		}
 		React.useEffect(() => {
 			if (!portfolioStores.isLoad) {
 				portfolioStores.fetchPortfolio()
@@ -123,8 +127,19 @@ const Portfolio: React.FC = observer(
 								<Button type='primary' htmlType='submit'>
 									Сохранить
 								</Button>
+								<Button
+									type='primary'
+									onClick={cancelPortfolio}
+									style={{ marginLeft: "10px" }}>
+									Отмена
+								</Button>
 							</Form.Item>
 							<Form.Item label='Портфолио'>
+								{portfolio.map((item) => (
+									<p style={{ display: "none" }} key={item._id}>
+										{item.title}
+									</p>
+								))}
 								<List
 									header={<div>Портфолио</div>}
 									footer=''
@@ -142,7 +157,9 @@ const Portfolio: React.FC = observer(
 												alt=''
 												style={{ width: "25px" }}
 												src={
-													item.prev!.length && item.prev!.includes("upload")
+													item.prev &&
+													item.prev!.length &&
+													item.prev!.includes("upload")
 														? `http://localhost:5051/${item.prev}`
 														: item.prev
 												}

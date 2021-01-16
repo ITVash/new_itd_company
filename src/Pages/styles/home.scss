@@ -381,6 +381,12 @@
 	//border-image: $side_menu_gradient_invert;
 	//border-image-slice: 1;
 	//border-width: 5px;
+	p {
+		padding: 0;
+		margin: 0;
+		color: #fff;
+		font-size: 22px;
+	}
 	font {
 		font {
 			position: relative;

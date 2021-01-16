@@ -21,6 +21,11 @@ const Portfolio: React.FC<TPortfolioProps> = observer(
 			window.scrollTo(0, 0)
 			setPort("")
 		}
+		React.useEffect(() => {
+			if (!PortfolioStores.isLoad) {
+				PortfolioStores.fetchPortfolio()
+			}
+		}, [])
 		return (
 			<>
 				{!view && (
@@ -42,7 +47,9 @@ const Portfolio: React.FC<TPortfolioProps> = observer(
 										portfolio.map((item, index) => (
 											<article
 												key={index + Date.now()}
-												style={{ background: `url(${item.prev})` }}
+												style={{
+													background: `url(http://localhost:5051/${item.prev})`,
+												}}
 												onClick={() => {
 													setPort(item.title!)
 													window.scrollTo(0, 0)
@@ -56,7 +63,10 @@ const Portfolio: React.FC<TPortfolioProps> = observer(
 														<h4 className='portfolio_case_title'>
 															{item.title}
 														</h4>
-														<div className='description'>{item.desc}</div>
+														<div
+															className='description'
+															dangerouslySetInnerHTML={{ __html: item.desc! }}
+														/>
 													</div>
 												</Link>
 											</article>
@@ -89,7 +99,7 @@ const Portfolio: React.FC<TPortfolioProps> = observer(
 										<div className='portfolio_form_container'>
 											<img
 												key={item.title}
-												src={`${item.proj}`}
+												src={`http://localhost:5051/${item.proj}`}
 												alt={item.title}
 											/>
 										</div>

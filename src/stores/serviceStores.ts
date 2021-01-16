@@ -1,8 +1,9 @@
-import { observable, action, computed } from "mobx"
+import { makeAutoObservable } from "mobx"
+import { serviceApi } from "../api"
 import { IService } from "../Types"
 
 class ServiceStores {
-	@observable private service: IService[] = [
+	service: IService[] = [
 		{
 			background: "/img/Услуги/web-разработка.png",
 			title: "WEB-разработка",
@@ -327,15 +328,55 @@ class ServiceStores {
 			],
 		},
 	]
-
-	@computed
-	get getServiceInfo() {
-		return this.service
+	isLoad: boolean = false
+	constructor() {
+		makeAutoObservable(this)
 	}
-
-	@action setItems = (item: IService[]): void => {
-		this.service = item
+	create = async (e: IService): Promise<void> => {
+		try {
+			const { data } = await serviceApi.create(e)
+			if (data.status === "success") {
+				this.service.push(data.data)
+				console.log(this.service, data)
+				alert("Данные сохранены!")
+			}
+		} catch (error) {
+			console.error(`Ошибка: ${error}`)
+		}
+	}
+	update = async (e: IService): Promise<void> => {
+		try {
+			const { data } = await serviceApi.update(e)
+			if (data.status === "success") {
+				this.service = this.service.map((item) =>
+					item._id === e._id ? (item = e) : item,
+				)
+				alert("Данные обновлены!")
+			}
+		} catch (error) {
+			console.error(`Ошибка: ${error}`)
+		}
+	}
+	delete = async (e: string): Promise<void> => {
+		try {
+			const { data } = await serviceApi.delete(e)
+			if (data.status === "success") {
+				this.service = this.service.filter((item) => item._id !== e)
+				alert("Данные удалены!")
+			}
+		} catch (error) {
+			console.error(`Ошибка: ${error}`)
+		}
+	}
+	fetchService = async (): Promise<void> => {
+		try {
+			const { data } = await serviceApi.show()
+			this.service = data.data
+			this.isLoad = true
+		} catch (error) {
+			console.error(`Ошибка: ${error}`)
+		}
 	}
 }
 
-export default ServiceStores
+export default new ServiceStores()

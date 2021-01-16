@@ -69,7 +69,8 @@ class PortfolioStores {
 		try {
 			const { data } = await portfolioApi.create(e)
 			if (data.status === "success") {
-				this.portfolio.unshift(e)
+				this.portfolio.push(data.data)
+				console.log(this.portfolio, data)
 				alert("Данные сохранены!")
 			}
 		} catch (error) {
@@ -80,7 +81,9 @@ class PortfolioStores {
 		try {
 			const { data } = await portfolioApi.update(e)
 			if (data.status === "success") {
-				this.portfolio.map((item) => (item._id === e._id ? (item = e) : item))
+				this.portfolio = this.portfolio.map((item) =>
+					item._id === e._id ? (item = e) : item,
+				)
 				alert("Данные обновлены!")
 			}
 		} catch (error) {

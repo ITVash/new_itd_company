@@ -1,8 +1,10 @@
-import { observable, action, computed } from "mobx"
+import { makeAutoObservable } from "mobx"
+import { portfolioApi } from "../api"
 import { IPortfolio } from "../Types"
 
 class PortfolioStores {
-	@observable private portfolio: IPortfolio[] = [
+	isLoad: boolean = false
+	portfolio: IPortfolio[] = [
 		{
 			title: "Picasso Studio",
 			desc: "Студия интерьерного дизайна",
@@ -60,15 +62,51 @@ class PortfolioStores {
 			proj: "../../portfolio/ruklova-min.jpg",
 		},
 	]
-
-	@computed
-	get getPortfolioInfo() {
-		return this.portfolio
+	constructor() {
+		makeAutoObservable(this)
 	}
-
-	@action setItems = (item: IPortfolio[]): void => {
-		this.portfolio = item
+	create = async (e: IPortfolio): Promise<void> => {
+		try {
+			const { data } = await portfolioApi.create(e)
+			if (data.status === "success") {
+				this.portfolio.unshift(e)
+				alert("Данные сохранены!")
+			}
+		} catch (error) {
+			console.error(`Ошибка: ${error}`)
+		}
+	}
+	update = async (e: IPortfolio): Promise<void> => {
+		try {
+			const { data } = await portfolioApi.update(e)
+			if (data.status === "success") {
+				this.portfolio.map((item) => (item._id === e._id ? (item = e) : item))
+				alert("Данные обновлены!")
+			}
+		} catch (error) {
+			console.error(`Ошибка: ${error}`)
+		}
+	}
+	delete = async (e: string): Promise<void> => {
+		try {
+			const { data } = await portfolioApi.delete(e)
+			if (data.status === "success") {
+				this.portfolio = this.portfolio.filter((item) => item._id !== e)
+				alert("Данные удалены!")
+			}
+		} catch (error) {
+			console.error(`Ошибка: ${error}`)
+		}
+	}
+	fetchPortfolio = async (): Promise<void> => {
+		try {
+			const { data } = await portfolioApi.show()
+			this.portfolio = data.data
+			this.isLoad = true
+		} catch (error) {
+			console.error(`Ошибка: ${error}`)
+		}
 	}
 }
 
-export default PortfolioStores
+export default new PortfolioStores()

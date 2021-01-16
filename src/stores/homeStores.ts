@@ -1,49 +1,78 @@
-import { observable, action, computed } from "mobx"
-import { IHome } from "../Types"
+import { makeAutoObservable } from "mobx"
+import { homeApi } from "../api"
+import { IHome, TAdvant } from "../Types"
 
 class HomeStores {
-	@observable private home: IHome = {
-		whyWe: `<p>Мы придерживаемся принципу индивидуального подхода к каждому	проекту, любой наш проект уникален.</p><p>Мы создаем сайты для бизнеса, которые будут работать на вас.</p><p>Мы всегда стремимся найти самые конкурентоспособные решения и	достичь самого высокого уровня эффективности по всем проектам.</p><p>Мы создаем landing, корпоративный сайт, интернет – магазин любой сложности.</p><p>Мы продвигаем сайты на всех интернет- площадках.</p><p>Заказать создание сайта от веб - студии International Techno Dynamics, значит доверить свой имидж лучшим.</p>`,
-		advantages: [
-			{
-				title: "Эффективность",
-				icon: "/img/advantages_cool.png",
-			},
-			{
-				title: "Креативные идеи",
-				icon: "/img/advantages_pencil.png",
-			},
-			{
-				title: "Оптимизация",
-				icon: "/img/advantages_cubok.png",
-			},
-			{
-				title: "Стратегия",
-				icon: "/img/advantages_tool.png",
-			},
-			{
-				title: "Работа на результат",
-				icon: "/img/advantages_clock.png",
-			},
-			{
-				title: "Работаем без шаблонов",
-				icon: "/img/advantages_patern.png",
-			},
-		],
-		fb: "https://www.facebook.com/itdwebcompany/?modal=admin_todo_tour",
-		inst: "https://www.instagram.com/itd_company/",
-		vk: "https://vk.com/itd.company",
-		be: "",
+	home: IHome[] = []
+	isLoad: boolean = false
+	constructor() {
+		makeAutoObservable(this, {}, { deep: true })
 	}
 
-	@computed
 	get getHomeInfo() {
 		return this.home
 	}
 
-	@action setItems = (item: IHome): void => {
-		this.home = item
+	private setLoading = (status: boolean): void => {
+		this.isLoad = status
+	}
+	setChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		this.home = this.home.map((item) => ({
+			...item,
+			[e.target.name]: e.target.value,
+		}))
+	}
+	setService = (e: string) => {
+		this.home = this.home.map((item) => ({
+			...item,
+			serviceDesc: e,
+		}))
+	}
+	setWhy = (e: string) => {
+		this.home = this.home.map((item) => ({
+			...item,
+			whyWe: e,
+		}))
+	}
+	addAdvant = (obj: TAdvant): void => {
+		this.home = this.home.map((item) => ({
+			...item,
+			advantages: [obj, ...item.advantages!],
+		}))
+	}
+	editAdvant = (id: number, obj: TAdvant): void => {
+		const adv = this.home[0].advantages?.map((item, idx) =>
+			idx === id ? { ...item, ...obj } : item,
+		)
+		this.home = this.home.map((item) => ({
+			...item,
+			advantages: adv,
+		}))
+	}
+	delAdvant = (id: number): void => {
+		const adv = this.home[0].advantages?.filter((i, idx) => idx !== id)
+		this.home = this.home.map((item) => ({
+			...item,
+			advantages: adv,
+		}))
+	}
+	update = async () => {
+		try {
+			const { data } = await homeApi.update(this.home[0])
+			if (data.status === "success") alert("Данные сохранены!")
+		} catch (error) {
+			console.log("Ошибка", error)
+		}
+	}
+	fetchItems = () => {
+		homeApi
+			.show()
+			.then(({ data }) => {
+				this.home = data.data
+				this.setLoading(true)
+			})
+			.catch((err: any) => console.log("Ошибка запроса к базе данных", err))
 	}
 }
 
-export default HomeStores
+export default new HomeStores()

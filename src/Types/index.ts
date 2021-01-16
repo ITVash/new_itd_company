@@ -1,22 +1,24 @@
-/* type TImage = {
-	destination: string
-	encoding: string
-	fieldname: string
-	filename: string
-	mimetype: string
-	originalname: string
-	path: string
-	size: number
-} */
+export type TImage = {
+	destination?: string
+	encoding?: string
+	fieldname?: string
+	filename?: string
+	mimetype?: string
+	originalname?: string
+	path?: string
+	size?: number
+}
 
-type TAdvant = {
+export type TAdvant = {
+	_id?: string
 	title: string
-	icon: string
+	icon?: string
 }
 
 export interface IHome {
 	_id?: string
 	advantages?: TAdvant[]
+	serviceDesc?: string
 	whyWe?: string
 	vk?: string
 	fb?: string

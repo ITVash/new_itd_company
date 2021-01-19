@@ -11,9 +11,9 @@ type TUpImg = {
 }
 type TUploadProps = {
 	list?: TUpImg | string
-	listArr?: TUpImg[]
+	listArr?: any[]
 	multiple?: boolean
-	onChange?: (func: File | undefined) => void
+	onChange?: (func: File | any | undefined) => void
 }
 const Upload: React.FC<TUploadProps> = ({
 	list,
@@ -21,15 +21,25 @@ const Upload: React.FC<TUploadProps> = ({
 	multiple,
 	onChange,
 }): React.ReactElement => {
-	multiple = false
-	const preview = React.useRef<any>(null)
+	const preview = React.useRef<any | any[]>(null)
 	const changeInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
-		const file = e.target.files![0]
-		preview.current = URL.createObjectURL(file)
-		onChange!(file)
+		if (!multiple) {
+			const file = e.target.files![0]
+			preview.current = URL.createObjectURL(file)
+			onChange!(file)
+		} else {
+			const file = e.target.files!
+			for (let i = 0; i < file.length; i++) {
+				const item = file[i]
+				onChange!((prev: any[]) => prev.concat(item))
+			}
+		}
 	}
 	const delImage = (): void => {
 		onChange!(undefined)
+	}
+	const delImageArr = (id: number): void => {
+		onChange!((prev: any[]) => prev.filter((item, index) => index !== id))
 	}
 	const nameUpdate = String(Math.round(Math.random()) + Date.now())
 	return (
@@ -58,6 +68,37 @@ const Upload: React.FC<TUploadProps> = ({
 						}
 					/>{" "}
 					<span onClick={delImage}>Удалить</span>
+				</div>
+			)}
+
+			{multiple && listArr?.length && (
+				<div style={{ display: "flex" }}>
+					{listArr &&
+						listArr.map((item, index) => (
+							<div className='previewImg multiple' key={index + Date.now()}>
+								<img
+									alt=''
+									src={
+										listArr && typeof listArr[0] === "string"
+											? `http://localhost:5051/${item}`
+											: URL.createObjectURL(item)
+									}
+								/>{" "}
+								<span onClick={() => delImageArr(index)}>Удалить</span>
+							</div>
+						))}
+					{/* <div className='uploadBox'>
+						<input
+							type='file'
+							multiple={multiple}
+							id={nameUpdate}
+							className='upload_style'
+							onChange={changeInput}
+						/>
+						<label htmlFor={nameUpdate} className='uploadLabel'>
+							<span>+</span> Загрузить
+						</label>
+					</div> */}
 				</div>
 			)}
 		</>

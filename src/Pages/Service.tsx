@@ -21,6 +21,7 @@ const Service: React.FC = observer(
 		const serviceBase: IService[] = serviceStores.service
 		const home: IHome = homeStores.home[0]
 		let slidesType = null
+
 		const onClickHandler = React.useCallback(() => {
 			let index = 0
 			const serviceItem = document.querySelectorAll(".service_item")
@@ -32,6 +33,7 @@ const Service: React.FC = observer(
 			 */
 			serviceItem.forEach((item, id) => {
 				item.addEventListener("click", () => {
+					alert("есть клик")
 					index = id
 					setCount(id)
 					setService(true)
@@ -155,15 +157,18 @@ const Service: React.FC = observer(
 				}
 			}
 		}, [service, count])
-		React.useEffect(() => {
-			!serviceStores.isLoad && serviceStores.fetchService()
-		}, [])
+
 		React.useEffect(() => {
 			onClickHandler()
 		}, [onClickHandler])
 		React.useEffect(() => {
 			window.scrollTo(0, 0)
 		}, [])
+
+		React.useEffect(() => {
+			!serviceStores.isLoad && serviceStores.fetchService()
+		}, [])
+
 		return (
 			<>
 				<Helmet>

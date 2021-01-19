@@ -52,6 +52,9 @@
   position: relative;
   z-index: -1;
 }
+.multiple {
+  margin: 5px;
+}
 .previewImg:hover > img::after {
   content: '';
   position: absolute;

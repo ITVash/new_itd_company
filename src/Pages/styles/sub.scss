@@ -1,0 +1,36 @@
+.shift_description {
+	margin-left: 80px;
+	margin-right: 80px;
+	//max-width: 910px;
+	font-size: 22px;
+	//border-left: 5px solid;
+	//border-image: $side_menu_gradient_invert;
+	//border-image-slice: 1;
+	//border-width: 5px;
+	p {
+		padding: 0;
+		margin: 0;
+		color: #000;
+		font-size: 22px;
+	}
+	font {
+		font {
+			position: relative;
+			//margin-left: 80px;
+			//margin-right: 80px;
+			//max-width: 910px;
+			font-size: 22px;
+		}
+	}
+	position: relative;
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		left: -30px;
+		height: 100%;
+		width: 5px;
+		background: linear-gradient(0deg, #54bbf6 0%, #390065 100%);
+	}
+}

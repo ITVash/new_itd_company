@@ -1,5 +1,7 @@
 import classNames from "classnames"
 import React from "react"
+import { useHistory } from "react-router-dom"
+import { axios } from "../../core"
 //import { axios } from "../../core"
 interface IClickbaitProps {
 	setCheck?: React.Dispatch<React.SetStateAction<boolean>>
@@ -23,7 +25,7 @@ const Clickbait: React.FC<IClickbaitProps> = ({
 		["list4", new Map<string, string[]>([])],
 		["forms", new Map<string, string[]>([])],
 	])
-
+	const history = useHistory()
 	const clickBait = () => {
 		const obj: TObj = {
 			list1: [],
@@ -45,9 +47,9 @@ const Clickbait: React.FC<IClickbaitProps> = ({
 		maping.get("forms")!.forEach((item: string) => {
 			obj.forms.push(item)
 		})
-		//axios.post("/sendclick", obj)
-		console.log("maping", maping)
+		axios.post("/sendclick", obj)
 		setCheck!(false)
+		history.push("/")
 	}
 
 	const slider = React.useCallback(() => {

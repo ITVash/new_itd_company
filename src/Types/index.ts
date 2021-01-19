@@ -56,6 +56,7 @@ export interface IPortfolio {
 export interface ISubService {
 	_id?: string
 	title?: string
+	serviceID?: string
 	body?: string
 	img1?: string
 	img2?: string

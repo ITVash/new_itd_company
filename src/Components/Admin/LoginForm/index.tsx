@@ -14,7 +14,11 @@ const LoginForm: React.FC = (): React.ReactElement => {
 						<Input placeholder='Логин' prefix={<UserOutlined />} />
 					</Form.Item>
 					<Form.Item label='Пароль'>
-						<Input placeholder='Пароль' prefix={<LockOutlined />} />
+						<Input
+							placeholder='Пароль'
+							type='password'
+							prefix={<LockOutlined />}
+						/>
 					</Form.Item>
 					<Form.Item>
 						<Button

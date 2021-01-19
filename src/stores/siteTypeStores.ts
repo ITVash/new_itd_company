@@ -1,8 +1,10 @@
-import { observable, action, computed } from "mobx"
+import { makeAutoObservable } from "mobx"
+import { sitetypeApi } from "../api"
 import { ISiteType } from "../Types"
 
 class SiteTypeStores {
-	@observable private sitetype: ISiteType[] = [
+	isLoad: boolean = false
+	sitetype: ISiteType[] = [
 		{
 			title: "Промо-сайт",
 			icon: "/img/Types/t1.png",
@@ -268,15 +270,54 @@ class SiteTypeStores {
 		</ul>`,
 		},
 	]
-
-	@computed
-	get getSiteTypeInfo() {
-		return this.sitetype
+	constructor() {
+		makeAutoObservable(this)
 	}
-
-	@action setItems = (item: ISiteType[]): void => {
-		this.sitetype = item
+	create = async (e: ISiteType): Promise<void> => {
+		try {
+			const { data } = await sitetypeApi.create(e)
+			if (data.status === "success") {
+				this.sitetype.push(data.data)
+				alert("Данные сохранены!")
+			}
+		} catch (error) {
+			console.error(`Ошибка: ${error}`)
+		}
+	}
+	update = async (e: ISiteType): Promise<void> => {
+		try {
+			const { data } = await sitetypeApi.update(e)
+			if (data.status === "success") {
+				this.sitetype = this.sitetype.map((item) =>
+					item._id === e._id ? (item = e) : item,
+				)
+				//await serviceStores.fetchService()
+				alert("Данные обновлены!")
+			}
+		} catch (error) {
+			console.error(`Ошибка: ${error}`)
+		}
+	}
+	delete = async (e: string): Promise<void> => {
+		try {
+			const { data } = await sitetypeApi.delete(e)
+			if (data.status === "success") {
+				this.sitetype = this.sitetype.filter((item) => item._id !== e)
+				alert("Данные удалены!")
+			}
+		} catch (error) {
+			console.error(`Ошибка: ${error}`)
+		}
+	}
+	fetchService = async (): Promise<void> => {
+		try {
+			const { data } = await sitetypeApi.show()
+			this.sitetype = data.data
+			this.isLoad = true
+		} catch (error) {
+			console.error(`Ошибка: ${error}`)
+		}
 	}
 }
 
-export default SiteTypeStores
+export default new SiteTypeStores()

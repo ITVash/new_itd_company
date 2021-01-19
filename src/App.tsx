@@ -9,6 +9,8 @@ import Service from "./Pages/Service"
 import SiteType from "./Pages/SiteType"
 import SubService from "./Pages/SubService"
 import HomeStores from "./stores/homeStores"
+import ServiceStores from "./stores/serviceStores"
+import SubserviceStores from "./stores/subserviceStores"
 /**
  * ToDo
  * 1. Дописать недостоющие акшены в бизнес-логике фронта
@@ -21,6 +23,12 @@ const App: React.FC = observer(
 		React.useEffect(() => {
 			if (!HomeStores.isLoad) {
 				HomeStores!.fetchItems()
+			}
+			if (!ServiceStores.isLoad) {
+				ServiceStores!.fetchService()
+			}
+			if (!SubserviceStores.isLoad) {
+				SubserviceStores!.fetchService()
 			}
 		}, [])
 		return (

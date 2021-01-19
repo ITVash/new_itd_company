@@ -33,7 +33,6 @@ const Service: React.FC = observer(
 			 */
 			serviceItem.forEach((item, id) => {
 				item.addEventListener("click", () => {
-					alert("есть клик")
 					index = id
 					setCount(id)
 					setService(true)

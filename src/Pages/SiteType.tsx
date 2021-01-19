@@ -57,7 +57,7 @@ const SiteType: React.FC = observer(
 													setActiv(index + 1)
 													setTypeSite(item)
 													if (window.innerWidth > 800) e.stopPropagation()
-													window.scrollTo(0, e.pageY)
+													window.scrollTo(0, 0)
 												}}>
 												<img
 													src={`http://localhost:5051/${item.icon}`}

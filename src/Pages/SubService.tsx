@@ -4,21 +4,24 @@ import { Helmet } from "react-helmet"
 import { Footer, Forms, Header } from "../Components"
 import SubServiceStores from "../stores/subserviceStores"
 import { ISubService } from "../Types"
-import { withRouter } from "react-router-dom"
+import { useHistory, withRouter } from "react-router-dom"
 
 import "./styles/sub.scss"
+import { ArrowLeftOutlined } from "@ant-design/icons"
 
 const SubService: React.FC = observer(
 	(): React.ReactElement => {
+		const history = useHistory()
 		const base: ISubService[] = SubServiceStores!.subservice
 		const find = React.useRef<string>()
 		const items: ISubService = base.filter(
 			(item) => item.title === find.current,
 		)[0]
+		find.current = decodeURI(window.location.pathname.split("/").pop()!)
 		React.useEffect(() => {
 			const { pathname } = window.location
 			find.current = decodeURI(pathname.split("/").pop()!)
-		}, [])
+		}, [find])
 		React.useEffect(() => {
 			!SubServiceStores.isLoad && SubServiceStores.fetchService()
 		}, [])
@@ -43,6 +46,7 @@ const SubService: React.FC = observer(
 								dangerouslySetInnerHTML={{ __html: items && items.body! }}
 							/>
 						</div>
+						<ArrowLeftOutlined onClick={() => {history.push('/services')}} />
 					</div>
 				</section>
 				<section className='subservices_description_container'>

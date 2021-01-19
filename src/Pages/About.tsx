@@ -124,9 +124,20 @@ const About: React.FC = observer(
 					</section>
 				</div>
 
+				<div className="wrapper">
+				<video width='100%' height='auto'>
+					<source src={about && about.video! && about.video!.includes("upload")
+										? `http://localhost:5051/${about.video}`
+										: about.video} type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
+					</video>
+				</div>
+
 				<div className='wrapper'>
 					<section className='slogan'>
 						<div dangerouslySetInnerHTML={{ __html: about.why! }} />
+						<div>
+							
+						</div>
 					</section>
 				</div>
 

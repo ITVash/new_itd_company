@@ -43,6 +43,11 @@ const App: React.FC = observer(
 					<Route path='/manager' exact component={Admin} />
 					<Route path='/' exact component={Home} />
 					<Route path='/about' exact component={About} />
+					<Route
+						path='/contacts'
+						exact
+						render={() => <About contact={true} />}
+					/>
 					<Route path='/portfolio' exact component={Portfolio} />
 					<Route
 						path='/portfolio/:id'

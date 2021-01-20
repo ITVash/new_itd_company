@@ -27,7 +27,7 @@ const Footer: React.FC = observer(
 							<Link to='/portfolio'>Портфолио</Link>
 						</li>
 						<li>
-							<Link to='/about'>Контакты</Link>
+							<Link to='/contacts'>Контакты</Link>
 						</li>
 					</ul>
 				</nav>

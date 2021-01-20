@@ -6,11 +6,14 @@ import AboutStores from "../stores/aboutStores"
 import { IAbout } from "../Types"
 
 import "./styles/about.scss"
-
-const About: React.FC = observer(
-	(): React.ReactElement => {
+type TAbout = {
+	contact?: boolean
+}
+const About: React.FC<TAbout> = observer(
+	({ contact }): React.ReactElement => {
 		const about: IAbout = AboutStores.about
 		const [openSlide, setOpenSlide] = React.useState<boolean>(false)
+		const scrollRef = React.useRef<HTMLDivElement>(null)
 		const slider = React.useCallback(() => {
 			let item = 0
 			let str = ""
@@ -87,6 +90,23 @@ const About: React.FC = observer(
 				AboutStores.fetchAbout()
 			}
 		}, [])
+		console.log("body", document.querySelector(".App")?.clientHeight)
+		console.log(
+			"con",
+			scrollRef.current &&
+				document.body.clientHeight - scrollRef.current!.clientHeight,
+		)
+		React.useEffect(() => {
+			if (contact) {
+				//scrollRef.current && scrollRef.current!.scrollTo(0, 0)
+				window.scrollTo(
+					0,
+					document.querySelector(".App")?.clientHeight! -
+						scrollRef.current!.clientHeight -
+						188,
+				)
+			}
+		}, [contact])
 		return (
 			<>
 				<Helmet>
@@ -105,9 +125,7 @@ const About: React.FC = observer(
 					<section className='about_introduction'>
 						<div className='about_container'>
 							<div className='about'>
-								<h2 dangerouslySetInnerHTML={{ __html: about.title! }}>
-									{/* <div dangerouslySetInnerHTML={{ __html: about.title! }} /> */}
-								</h2>
+								<h2 dangerouslySetInnerHTML={{ __html: about.title! }}></h2>
 								<div dangerouslySetInnerHTML={{ __html: about.desc! }} />
 							</div>
 						</div>
@@ -124,18 +142,20 @@ const About: React.FC = observer(
 					</section>
 				</div>
 
-				<div className='wrapper'>
-					<video width='100%' height='auto' controls autoPlay>
-						<source
-							src={
-								about && about.video! && about.video!.includes("upload")
-									? `http://localhost:5051/${about.video}`
-									: about.video
-							}
-							type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
-						/>
-					</video>
-				</div>
+				{about && about.video && about.video!.length > 0 && (
+					<div className='wrapper'>
+						<video width='100%' height='auto' controls autoPlay>
+							<source
+								src={
+									about && about.video! && about.video!.includes("upload")
+										? `http://localhost:5051/${about.video}`
+										: about.video
+								}
+								type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
+							/>
+						</video>
+					</div>
+				)}
 
 				<div className='wrapper'>
 					<section className='slogan'>
@@ -170,7 +190,7 @@ const About: React.FC = observer(
 					</div>
 				</section>
 
-				<section className='contact_form index_contacts_light'>
+				<section className='contact_form index_contacts_light' ref={scrollRef}>
 					<div className='wrapper'>
 						<div className='wrapper_form'>
 							<div className='gradient_title'>

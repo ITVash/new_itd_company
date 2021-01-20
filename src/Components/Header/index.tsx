@@ -28,6 +28,10 @@ const Header: React.FC = (): React.ReactElement => {
 		document.body.addEventListener("click", popupHandler)
 	}, [popupHandler])
 
+	React.useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
+
 	return (
 		<>
 			<section id='main_menu' className={classNames({ open: open })}>
@@ -95,7 +99,7 @@ const Header: React.FC = (): React.ReactElement => {
 					</li>
 					<li>
 						<Link
-							to='/about'
+							to='/contacts'
 							className='main_menu_item'
 							onClick={(): void => setOpen(false)}>
 							<div className='bottom'>

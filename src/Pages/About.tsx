@@ -103,7 +103,7 @@ const About: React.FC<TAbout> = observer(
 					0,
 					document.querySelector(".App")?.clientHeight! -
 						scrollRef.current!.clientHeight -
-						188,
+						254,
 				)
 			}
 		}, [contact])

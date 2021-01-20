@@ -106,7 +106,11 @@ const SiteType: React.FC = observer(
 										{typeSite.example!.length &&
 											typeSite.example!.map((image, index) => (
 												<a href='/' key={index + Date.now()}>
-													<img src={`http://localhost:5051/${image}`} alt='' />
+													<img
+														src={`http://localhost:5051/${image}`}
+														alt=''
+														key={index + Date.now()}
+													/>
 												</a>
 											))}
 									</div>

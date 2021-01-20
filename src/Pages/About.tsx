@@ -90,21 +90,16 @@ const About: React.FC<TAbout> = observer(
 				AboutStores.fetchAbout()
 			}
 		}, [])
-		console.log("body", document.querySelector(".App")?.clientHeight)
-		console.log(
-			"con",
-			scrollRef.current &&
-				document.body.clientHeight - scrollRef.current!.clientHeight,
-		)
 		React.useEffect(() => {
 			if (contact) {
-				//scrollRef.current && scrollRef.current!.scrollTo(0, 0)
 				window.scrollTo(
 					0,
 					document.querySelector(".App")?.clientHeight! -
 						scrollRef.current!.clientHeight -
 						254,
 				)
+			} else {
+				window.scrollTo(0, 0)
 			}
 		}, [contact])
 		return (

@@ -191,7 +191,7 @@ const About: React.FC = observer(
 							<Upload list={image3} onChange={setImage3} />
 						</Form.Item>
 						<Form.Item label='Видео'>
-							<Upload list={image4} onChange={setImage4} />
+							<Upload list={image4} onChange={setImage4} type={1} />
 						</Form.Item>
 						<Form.Item label='Телефон'>
 							<Input

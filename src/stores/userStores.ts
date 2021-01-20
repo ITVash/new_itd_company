@@ -18,7 +18,6 @@ class UserStores {
 				const dec: any = await jwtDecode(token)
 				if (dec!.exp * 1000 > Date.now()) {
 					const get = await userApi.getMe()
-					console.log("get", get.data.data)
 					this.login = true
 					this.user = get.data.data
 				} else {

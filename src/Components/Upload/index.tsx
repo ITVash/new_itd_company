@@ -9,17 +9,23 @@ type TUpImg = {
 	type?: string
 	webkitRelativePath?: string
 }
+enum ETypes {
+	image,
+	videos,
+}
 type TUploadProps = {
 	list?: TUpImg | string
 	listArr?: any[]
 	multiple?: boolean
 	onChange?: (func: File | any | undefined) => void
+	type?: ETypes
 }
 const Upload: React.FC<TUploadProps> = ({
 	list,
 	listArr,
 	multiple,
 	onChange,
+	type,
 }): React.ReactElement => {
 	const preview = React.useRef<any | any[]>(null)
 	const changeInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -41,7 +47,9 @@ const Upload: React.FC<TUploadProps> = ({
 	const delImageArr = (id: number): void => {
 		onChange!((prev: any[]) => prev.filter((item, index) => index !== id))
 	}
-	const nameUpdate = String(Math.round(Math.random()) + Date.now())
+	const nameUpdate = String(Math.round(Math.random() * 10) + Date.now())
+	console.log("type", type)
+
 	return (
 		<>
 			{!list ? (
@@ -56,6 +64,18 @@ const Upload: React.FC<TUploadProps> = ({
 					<label htmlFor={nameUpdate} className='uploadLabel'>
 						<span>+</span> Загрузить
 					</label>
+				</div>
+			) : type === 1 ? (
+				<div className='previewImg'>
+					<video height='100px' width='100px'>
+						<source
+							src={
+								list && typeof list === "string"
+									? `http://localhost:5051/${list}`
+									: preview.current
+							}
+						/>
+					</video>
 				</div>
 			) : (
 				<div className='previewImg'>

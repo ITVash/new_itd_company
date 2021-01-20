@@ -13,15 +13,16 @@ const SubService: React.FC = observer(
 	(): React.ReactElement => {
 		const history = useHistory()
 		const base: ISubService[] = SubServiceStores!.subservice
-		const find = React.useRef<string>()
-		const items: ISubService = base.filter(
-			(item) => item.title === find.current,
-		)[0]
-		find.current = decodeURI(window.location.pathname.split("/").pop()!)
+		const [items, setItems] = React.useState<ISubService>()
+		/* const find: ISubService = base.filter(
+			(item) => item.title === i.current,
+		)[0] */
 		React.useEffect(() => {
 			const { pathname } = window.location
-			find.current = decodeURI(pathname.split("/").pop()!)
-		}, [find])
+			const uri = decodeURI(pathname.split("/").pop()!)
+			setItems(base.filter((item) => item.title === uri)[0])
+			console.log(uri, items)
+		}, [base, items])
 		React.useEffect(() => {
 			!SubServiceStores.isLoad && SubServiceStores.fetchService()
 		}, [])
@@ -31,7 +32,7 @@ const SubService: React.FC = observer(
 		return (
 			<>
 				<Helmet>
-					<title>{items ? items.title! : "Услуги"} - ITD Company</title>
+					<title>{items ? items.title : "Услуги"} - ITD Company</title>
 					<meta name='description' content={`Страница сайта - Услуги`} />
 				</Helmet>
 				<Header />
@@ -43,10 +44,16 @@ const SubService: React.FC = observer(
 							</div>
 							<div
 								className='shift_description'
-								dangerouslySetInnerHTML={{ __html: items && items.body! }}
+								dangerouslySetInnerHTML={{
+									__html: items! && items.body!,
+								}}
 							/>
 						</div>
-						<ArrowLeftOutlined onClick={() => {history.push('/services')}} />
+						<ArrowLeftOutlined
+							onClick={() => {
+								history.push("/services")
+							}}
+						/>
 					</div>
 				</section>
 				<section className='subservices_description_container'>
@@ -58,7 +65,9 @@ const SubService: React.FC = observer(
 							/>
 							<div
 								className='description_text'
-								dangerouslySetInnerHTML={{ __html: items && items.text1! }}
+								dangerouslySetInnerHTML={{
+									__html: items! && items.text1!,
+								}}
 							/>
 						</div>
 						<div className='subservices_description'>
@@ -68,7 +77,9 @@ const SubService: React.FC = observer(
 							/>
 							<div
 								className='description_text'
-								dangerouslySetInnerHTML={{ __html: items && items.text2! }}
+								dangerouslySetInnerHTML={{
+									__html: items! && items.text2!,
+								}}
 							/>
 						</div>
 					</div>

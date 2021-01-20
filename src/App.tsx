@@ -1,6 +1,7 @@
 import { observer } from "mobx-react-lite"
 import React from "react"
 import { Route, Switch } from "react-router-dom"
+import { userApi } from "./api"
 import About from "./Pages/About"
 import Admin from "./Pages/Admin"
 import Home from "./Pages/Home"
@@ -11,6 +12,7 @@ import SubService from "./Pages/SubService"
 import HomeStores from "./stores/homeStores"
 import ServiceStores from "./stores/serviceStores"
 import SubserviceStores from "./stores/subserviceStores"
+import userStores from "./stores/userStores"
 /**
  * ToDo
  * 1. Дописать недостоющие акшены в бизнес-логике фронта
@@ -30,6 +32,10 @@ const App: React.FC = observer(
 			if (!SubserviceStores.isLoad) {
 				SubserviceStores!.fetchService()
 			}
+		}, [])
+		React.useEffect(() => {
+			userApi.show()
+			userStores.getMe()
 		}, [])
 		return (
 			<div className='App'>

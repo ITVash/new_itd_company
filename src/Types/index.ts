@@ -8,6 +8,19 @@ export type TImage = {
 	path?: string
 	size?: number
 }
+export interface IUser {
+	_id?: string
+	fullname?: string
+	login?: string
+	email?: string
+	confirm?: boolean
+	tenant?: boolean
+	access?: number
+	phone?: string
+	confirmed_hash?: string
+	password?: string
+	avatar?: string
+}
 
 export type TAdvant = {
 	_id?: string

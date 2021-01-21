@@ -21,7 +21,6 @@ import "./styles/admin.scss"
 const Admin: React.FC = observer(
 	(): React.ReactElement => {
 		const [menu, setMenu] = React.useState<string>("home")
-		console.log("object", userStores.user)
 		const login: boolean = userStores.login
 		if (!login) {
 			return <LoginForm />

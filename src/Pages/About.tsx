@@ -127,9 +127,9 @@ const About: React.FC<TAbout> = observer(
 						<div className='about_img_container'>
 							<img
 								src={
-									about.photo1!.length && about.photo1!.includes("upload")
-										? `https://api.itd.company:5051/${about.photo1}`
-										: about.photo1
+									about &&
+									about.photo1! &&
+									`https://api.itd.company:5051/${about.photo1}`
 								}
 								alt='photo1'
 							/>
@@ -164,17 +164,17 @@ const About: React.FC<TAbout> = observer(
 						<div className='photos_container'>
 							<img
 								src={
-									about.photo2!.length && about.photo2!.includes("upload")
-										? `https://api.itd.company:5051/${about.photo2}`
-										: about.photo2
+									about &&
+									about.photo2! &&
+									`https://api.itd.company:5051/${about.photo2}`
 								}
 								alt='photo2'
 							/>
 							<img
 								src={
-									about.photo3!.length && about.photo3!.includes("upload")
-										? `https://api.itd.company:5051/${about.photo3}`
-										: about.photo3
+									about &&
+									about.photo3! &&
+									`https://api.itd.company:5051/${about.photo3}`
 								}
 								alt='photo3'
 							/>

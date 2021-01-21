@@ -111,7 +111,11 @@ const About: React.FC = observer(
 					file.append("file", image4)
 					const { data } = await attachApi.create(file)
 					pic4 = `${data.data.destination}/${data.data.filename}`
-				} else pic4 = image4
+				} else {
+					if (typeof image4 === "undefined") {
+						pic4 = ""
+					} else pic4 = image4
+				}
 				const obj: IAbout = {
 					_id: ab?._id,
 					desc: ab?.desc,
@@ -122,7 +126,7 @@ const About: React.FC = observer(
 					photo1: pic1 ? pic1 : ab?.photo1,
 					photo2: pic2 ? pic2 : ab?.photo2,
 					photo3: pic3 ? pic3 : ab?.photo3,
-					video: pic4 ? pic4 : ab?.video,
+					video: pic4 ? pic4 : pic4,
 					work: ab?.work,
 				}
 				AboutStores.update(obj)
@@ -154,7 +158,6 @@ const About: React.FC = observer(
 				setImage4(AboutStores.about.video)
 			}
 		}, [])
-		console.log("object", about && about.video)
 		if (!AboutStores!.isLoad) {
 			return <div>...Загрузка</div>
 		}

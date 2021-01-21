@@ -172,6 +172,9 @@ const Header: React.FC = (): React.ReactElement => {
 						{/* <li class="popup_nav_list__item">mail@mail.mail</li> */}
 					</ul>
 				</div>
+				<div className='download_button_container'>
+					<button className='downloadBtn'></button>
+				</div>
 			</section>
 			<section className='fixed_buttons_left'>
 				<div id='menu_button' onClick={() => setOpen(true)}>

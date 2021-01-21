@@ -160,7 +160,7 @@ const Portfolio: React.FC = observer(
 													item.prev &&
 													item.prev!.length &&
 													item.prev!.includes("upload")
-														? `http://localhost:5051/${item.prev}`
+														? `https://api.itd.company:5051/${item.prev}`
 														: item.prev
 												}
 											/>

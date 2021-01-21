@@ -48,7 +48,7 @@ const Portfolio: React.FC<TPortfolioProps> = observer(
 											<article
 												key={index + Date.now()}
 												style={{
-													background: `url(http://localhost:5051/${item.prev})`,
+													background: `url(https://api.itd.company:5051/${item.prev})`,
 												}}
 												onClick={() => {
 													setPort(item.title!)
@@ -99,7 +99,7 @@ const Portfolio: React.FC<TPortfolioProps> = observer(
 										<div className='portfolio_form_container'>
 											<img
 												key={item.title}
-												src={`http://localhost:5051/${item.proj}`}
+												src={`https://api.itd.company:5051/${item.proj}`}
 												alt={item.title}
 											/>
 										</div>

@@ -20,7 +20,7 @@ const ServiceBody: React.FC<IServiceBody> = ({
 			<h3 className='title'>{title}</h3>
 			<img
 				className='background_img'
-				src={`http://localhost:5051/${img}`}
+				src={`https://api.itd.company:5051/${img}`}
 				alt={title}
 			/>
 			<nav>

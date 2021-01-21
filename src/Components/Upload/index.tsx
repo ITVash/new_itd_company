@@ -71,7 +71,7 @@ const Upload: React.FC<TUploadProps> = ({
 						<source
 							src={
 								list && typeof list === "string"
-									? `http://localhost:5051/${list}`
+									? `https://api.itd.company:5051/${list}`
 									: preview.current
 							}
 						/>
@@ -83,7 +83,7 @@ const Upload: React.FC<TUploadProps> = ({
 						alt=''
 						src={
 							list && typeof list === "string"
-								? `http://localhost:5051/${list}`
+								? `https://api.itd.company:5051/${list}`
 								: preview.current
 						}
 					/>{" "}
@@ -100,7 +100,7 @@ const Upload: React.FC<TUploadProps> = ({
 									alt=''
 									src={
 										listArr && typeof listArr[0] === "string"
-											? `http://localhost:5051/${item}`
+											? `https://api.itd.company:5051/${item}`
 											: URL.createObjectURL(item)
 									}
 								/>{" "}

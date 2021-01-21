@@ -10,7 +10,6 @@ import "./styles/home.scss"
 const Home: React.FC = observer(
 	(): React.ReactElement => {
 		const items: IHome = HomeStores.home[0]
-		console.log("items", items && items.whyWe)
 		const [click, setClick] = React.useState<boolean>(false)
 		return (
 			<>
@@ -69,7 +68,7 @@ const Home: React.FC = observer(
 									</div>
 									<div className='index_advantages_item_icon'>
 										<img
-											src={item.icon}
+											src={`https://api.itd.company:5051/${item.icon}`}
 											alt=''
 											className='index_advantages_icon'
 										/>

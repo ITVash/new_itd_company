@@ -37,7 +37,7 @@ class HomeStores {
 	addAdvant = (obj: TAdvant): void => {
 		this.home = this.home.map((item) => ({
 			...item,
-			advantages: [obj, ...item.advantages!],
+			advantages: [...item.advantages!, obj],
 		}))
 	}
 	editAdvant = (id: number, obj: TAdvant): void => {

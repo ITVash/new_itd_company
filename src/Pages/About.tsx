@@ -128,7 +128,7 @@ const About: React.FC<TAbout> = observer(
 							<img
 								src={
 									about.photo1!.length && about.photo1!.includes("upload")
-										? `http://localhost:5051/${about.photo1}`
+										? `https://api.itd.company:5051/${about.photo1}`
 										: about.photo1
 								}
 								alt='photo1'
@@ -143,7 +143,7 @@ const About: React.FC<TAbout> = observer(
 							<source
 								src={
 									about && about.video! && about.video!.includes("upload")
-										? `http://localhost:5051/${about.video}`
+										? `https://api.itd.company:5051/${about.video}`
 										: about.video
 								}
 								type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
@@ -165,7 +165,7 @@ const About: React.FC<TAbout> = observer(
 							<img
 								src={
 									about.photo2!.length && about.photo2!.includes("upload")
-										? `http://localhost:5051/${about.photo2}`
+										? `https://api.itd.company:5051/${about.photo2}`
 										: about.photo2
 								}
 								alt='photo2'
@@ -173,7 +173,7 @@ const About: React.FC<TAbout> = observer(
 							<img
 								src={
 									about.photo3!.length && about.photo3!.includes("upload")
-										? `http://localhost:5051/${about.photo3}`
+										? `https://api.itd.company:5051/${about.photo3}`
 										: about.photo3
 								}
 								alt='photo3'
@@ -235,7 +235,7 @@ const About: React.FC<TAbout> = observer(
 												<div
 													className='slider_image'
 													style={{
-														background: `url(http://localhost:5051/${item.icon})`,
+														background: `url(https://api.itd.company:5051/${item.icon})`,
 													}}></div>
 												<div className='slide_info'>
 													<div className='number'>

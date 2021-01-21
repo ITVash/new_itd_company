@@ -19,7 +19,6 @@ const Forms: React.FC = (): React.ReactElement => {
 		history.push("/")
 		setForms(undefined)
 	}
-	console.log("forms", forms)
 	return (
 		<>
 			<form>

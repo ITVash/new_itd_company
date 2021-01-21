@@ -108,7 +108,7 @@ const Service: React.FC = observer(
 												item.background &&
 												item.background!.length &&
 												item.background!.includes("upload")
-													? `http://localhost:5051/${item.background}`
+													? `https://api.itd.company:5051/${item.background}`
 													: item.background
 											}
 										/>

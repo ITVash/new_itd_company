@@ -1,6 +1,6 @@
 import axios from "axios"
 
-axios.defaults.baseURL = "http://localhost:5051/api"
+axios.defaults.baseURL = "https://api.itd.company:5051/api"
 
 const token = localStorage.getItem("token")
 token && (axios.defaults.headers.common["token"] = `${token}`)

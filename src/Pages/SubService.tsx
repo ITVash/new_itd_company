@@ -60,7 +60,7 @@ const SubService: React.FC = observer(
 					<div className='wrapper'>
 						<div className='subservices_description'>
 							<img
-								src={`http://localhost:5051/${items && items.img1!}`}
+								src={`https://api.itd.company:5051/${items && items.img1!}`}
 								alt=''
 							/>
 							<div
@@ -72,7 +72,7 @@ const SubService: React.FC = observer(
 						</div>
 						<div className='subservices_description'>
 							<img
-								src={`http://localhost:5051/${items && items.img2!}`}
+								src={`https://api.itd.company:5051/${items && items.img2!}`}
 								alt=''
 							/>
 							<div

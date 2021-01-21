@@ -200,7 +200,7 @@ const SubService: React.FC = observer(
 											item.img1 &&
 											item.img1!.length &&
 											item.img1!.includes("upload")
-												? `http://localhost:5051/${item.img1}`
+												? `https://api.itd.company:5051/${item.img1}`
 												: item.img1
 										}
 									/>

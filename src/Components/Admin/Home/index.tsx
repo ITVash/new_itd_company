@@ -140,7 +140,7 @@ const Home: React.FC = observer(
 											style={{ width: "25px" }}
 											src={
 												item.icon!.length && item.icon!.includes("upload")
-													? `http://localhost:5051/${item.icon}`
+													? `https://api.itd.company:5051/${item.icon}`
 													: item.icon
 											}
 										/>

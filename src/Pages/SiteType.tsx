@@ -60,7 +60,7 @@ const SiteType: React.FC = observer(
 													window.scrollTo(0, 0)
 												}}>
 												<img
-													src={`http://localhost:5051/${item.icon}`}
+													src={`https://api.itd.company:5051/${item.icon}`}
 													alt=''
 													className='type_icon'
 												/>
@@ -78,7 +78,7 @@ const SiteType: React.FC = observer(
 													item.example!.map((image, index) => (
 														<a href='/' key={index + Date.now()}>
 															<img
-																src={`http://localhost:5051/${image}`}
+																src={`https://api.itd.company:5051/${image}`}
 																alt=''
 															/>
 														</a>
@@ -107,7 +107,7 @@ const SiteType: React.FC = observer(
 											typeSite.example!.map((image, index) => (
 												<a href='/' key={index + Date.now()}>
 													<img
-														src={`http://localhost:5051/${image}`}
+														src={`https://api.itd.company:5051/${image}`}
 														alt=''
 														key={index + Date.now()}
 													/>

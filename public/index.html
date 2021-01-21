@@ -60,16 +60,45 @@
 		<!-- /Yandex.Metrika counter -->
 		<div id="root"></div>
 
-		<script src="google-translate.js"></script>
-		<script src="//translate.google.com/translate_a/element.js?cb=TranslateInit"></script>
 		<script>
-			// Check that service workers are supported
-			if ("serviceWorker" in navigator) {
-				// Use the window load event to keep the page load performant
+			const isProduction = "%NODE_ENV%" === "production"
+			if (isProduction && "serviceWorker" in navigator) {
 				window.addEventListener("load", () => {
-					navigator.serviceWorker.register("/service-worker.js")
+					navigator.serviceWorker.register("sw.js").then(() => {
+						const channel = new BroadcastChannel("service-worker-channel")
+						channel.onmessage = (message) => {
+							if (message.data.promptToReload) {
+								channel.postMessage({ skipWaiting: true })
+							}
+						}
+					})
 				})
 			}
+			let defenderPrompt
+			const installApp = () => {
+				defenderPrompt.prompt()
+				defenderPrompt.userChoice.then((choice) => {
+					if (choice.outcome === "accepted") {
+						//alert('Приложение установлено')
+						console.log("Приложение установленно")
+					} else {
+						console.log("Не удается установить приложение")
+					}
+					defenderPrompt = null
+				})
+			}
+			window.addEventListener("beforeinstallprompt", (e) => {
+				e.preventDefault()
+				console.log("platform", e)
+				defenderPrompt = e
+				const install = document.querySelector(".downloadBtn")
+				install.addEventListener("click", (d) => {
+					d.preventDefault()
+					installApp()
+				})
+			})
 		</script>
+		<script src="google-translate.js"></script>
+		<script src="//translate.google.com/translate_a/element.js?cb=TranslateInit"></script>
 	</body>
 </html>

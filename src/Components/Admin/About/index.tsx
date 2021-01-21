@@ -111,7 +111,7 @@ const About: React.FC = observer(
 					file.append("file", image4)
 					const { data } = await attachApi.create(file)
 					pic4 = `${data.data.destination}/${data.data.filename}`
-				}
+				} else pic4 = image4
 				const obj: IAbout = {
 					_id: ab?._id,
 					desc: ab?.desc,
@@ -136,7 +136,7 @@ const About: React.FC = observer(
 			}
 		}, [])
 		React.useEffect(() => {
-			if (about) {
+			if (about && about._id) {
 				setAb(about)
 			}
 		}, [about])
@@ -154,6 +154,10 @@ const About: React.FC = observer(
 				setImage4(AboutStores.about.video)
 			}
 		}, [])
+		console.log("object", about && about.video)
+		if (!AboutStores!.isLoad) {
+			return <div>...Загрузка</div>
+		}
 		return (
 			<Row justify='center'>
 				<Col span='23'>
@@ -182,16 +186,16 @@ const About: React.FC = observer(
 							/>
 						</Form.Item>
 						<Form.Item label='Фотография 1'>
-							<Upload list={image1} onChange={setImage1} />
+							<Upload list={image1 && image1} onChange={setImage1} />
 						</Form.Item>
 						<Form.Item label='Фотография 2'>
-							<Upload list={image2} onChange={setImage2} />
+							<Upload list={image2 && image2} onChange={setImage2} />
 						</Form.Item>
 						<Form.Item label='Фотография 3'>
-							<Upload list={image3} onChange={setImage3} />
+							<Upload list={image3 && image3} onChange={setImage3} />
 						</Form.Item>
 						<Form.Item label='Видео'>
-							<Upload list={image4} onChange={setImage4} type={1} />
+							<Upload list={image4 && image4} onChange={setImage4} type={1} />
 						</Form.Item>
 						<Form.Item label='Телефон'>
 							<Input
@@ -225,6 +229,12 @@ const About: React.FC = observer(
 									Ок
 								</Button>
 							</Form.Item>
+							{about &&
+								about.work?.map((item, id) => (
+									<p style={{ display: "none" }} key={id}>
+										{item.title}
+									</p>
+								))}
 							<List
 								header={<div>Как мы работает</div>}
 								footer=''

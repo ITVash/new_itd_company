@@ -48,7 +48,6 @@ const Upload: React.FC<TUploadProps> = ({
 		onChange!((prev: any[]) => prev.filter((item, index) => index !== id))
 	}
 	const nameUpdate = String(Math.round(Math.random() * 10) + Date.now())
-	console.log("type", type)
 
 	return (
 		<>
@@ -76,6 +75,7 @@ const Upload: React.FC<TUploadProps> = ({
 							}
 						/>
 					</video>
+					<span onClick={delImage}>Удалить</span>
 				</div>
 			) : (
 				<div className='previewImg'>

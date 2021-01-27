@@ -5,6 +5,7 @@ import { Link, useHistory } from "react-router-dom"
 import { Footer, Header } from "../Components"
 import PortfolioStores from "../stores/portfolioStores"
 import { IPortfolio } from "../Types"
+import NotFound from "./NotFound"
 
 import "./styles/portfolio.scss"
 type TPortfolioProps = {
@@ -26,6 +27,9 @@ const Portfolio: React.FC<TPortfolioProps> = observer(
 				PortfolioStores.fetchPortfolio()
 			}
 		}, [])
+		if (portfolio.length <= 0) {
+			return <NotFound />
+		}
 		return (
 			<>
 				{!view && (

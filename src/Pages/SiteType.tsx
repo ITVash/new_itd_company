@@ -8,6 +8,7 @@ import { Collapse } from "antd"
 import "./styles/typesite.scss"
 import SiteTypeStores from "../stores/siteTypeStores"
 import { ISiteType } from "../Types"
+import NotFound from "./NotFound"
 
 const SiteType: React.FC = observer(
 	(): React.ReactElement => {
@@ -24,6 +25,9 @@ const SiteType: React.FC = observer(
 				setTypeSite(types[0])
 			}
 		}, [types])
+		if (types.length <= 0) {
+			return <NotFound />
+		}
 		return (
 			<>
 				<Helmet>

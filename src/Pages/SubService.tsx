@@ -8,6 +8,7 @@ import { useHistory, withRouter } from "react-router-dom"
 
 import "./styles/sub.scss"
 import { ArrowLeftOutlined } from "@ant-design/icons"
+import NotFound from "./NotFound"
 
 const SubService: React.FC = observer(
 	(): React.ReactElement => {
@@ -29,6 +30,9 @@ const SubService: React.FC = observer(
 		React.useEffect(() => {
 			window.scrollTo(0, 0)
 		}, [])
+		if (base.length <= 0) {
+			return <NotFound />
+		}
 		return (
 			<>
 				<Helmet>

@@ -12,6 +12,7 @@ import {
 import homeStores from "../stores/homeStores"
 import serviceStores from "../stores/serviceStores"
 import { IHome, IService } from "../Types"
+import NotFound from "./NotFound"
 
 const Service: React.FC = observer(
 	(): React.ReactElement => {
@@ -167,7 +168,9 @@ const Service: React.FC = observer(
 		React.useEffect(() => {
 			!serviceStores.isLoad && serviceStores.fetchService()
 		}, [])
-
+		if (serviceBase.length <= 0) {
+			return <NotFound />
+		}
 		return (
 			<>
 				<Helmet>

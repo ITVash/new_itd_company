@@ -42,7 +42,7 @@ const Forms: React.FC = (): React.ReactElement => {
 						className={classNames("index_contacts_input", {
 							error_input: false,
 						})}
-						placeholder='Телефон (WhatsApp/Viber)'
+						placeholder='Телефон (Viber)'
 						required
 					/>
 					<input

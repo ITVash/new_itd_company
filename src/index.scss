@@ -262,7 +262,7 @@ body {
     cursor: pointer;
     transition: 0.3s;
     &:hover {
-      transform: translateX(-10px);
+      transform: scale(1, 0.8);
     }
   }
 }
@@ -342,9 +342,9 @@ select {
 .notFound__wrap img.notFound_iphone {
   display: none;
 }
-.shift_description{
-  p{
-    u{
+.light_text {
+  p {
+    u {
       color: #fff;
     }
   }

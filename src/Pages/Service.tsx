@@ -16,7 +16,7 @@ import NotFound from "./NotFound"
 
 const Service: React.FC = observer(
 	(): React.ReactElement => {
-		const itemRef = React.useRef<HTMLElement | any>(null)
+		const itemRef = React.useRef<HTMLElement>(null)
 		const [service, setService] = React.useState<boolean>(false)
 		const [count, setCount] = React.useState<number>(0)
 		const serviceBase: IService[] = serviceStores.service
@@ -39,7 +39,7 @@ const Service: React.FC = observer(
 					setService(true)
 					slidesType =
 						slide.current && slide.current.querySelectorAll(".services_slider")
-					slidesType!.forEach((sliden: HTMLElement, i: number) => {
+					slidesType!.forEach((sliden: any, i: number) => {
 						let offset = (i - id) * 100 + "%"
 						setTimeout(() => (sliden.style.left = offset), 1)
 					})
@@ -63,7 +63,7 @@ const Service: React.FC = observer(
 						index++
 					}
 					slidesType = slide.current!.querySelectorAll(".services_slider")
-					slidesType.forEach((sliden: HTMLElement, i: number) => {
+					slidesType.forEach((sliden: any, i: number) => {
 						let offset = (i - index) * 100 + "%"
 						sliden.style.transition = "all .500s linear"
 						setTimeout(() => (sliden.style.left = offset), 1)
@@ -88,7 +88,7 @@ const Service: React.FC = observer(
 					if (index > slidesType.length - 1) {
 						index--
 					}
-					slidesType.forEach((sliden: HTMLElement, i: number) => {
+					slidesType.forEach((sliden: any, i: number) => {
 						let offset = (i - index) * 100 + "%"
 						sliden.style.transition = "all .500s linear"
 						setTimeout(() => (sliden.style.left = offset), 1)
@@ -165,9 +165,11 @@ const Service: React.FC = observer(
 			window.scrollTo(0, 0)
 		}, [])
 
-		React.useEffect(() => {
+		/* React.useEffect(() => {
 			!serviceStores.isLoad && serviceStores.fetchService()
-		}, [])
+			
+		}, []) */
+		console.log("serviceBase", serviceBase)
 		if (serviceBase.length <= 0) {
 			return <NotFound />
 		}

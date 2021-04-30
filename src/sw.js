@@ -1,11 +1,11 @@
-importScripts("workbox-v5.1.3/workbox-sw.js")
-workbox.setConfig({ modulePathPrefix: "workbox-v5.1.3/" })
+importScripts("workbox-v6.1.2/workbox-sw.js")
+workbox.setConfig({ modulePathPrefix: "workbox-v6.1.2/" })
 
 const dataCacheConfig = {
 	cacheName: "meme-data",
 }
 
-workbox.precaching.precacheAndRoute(self.__WB_MANIFEST)
+//workbox.precaching.precacheAndRoute(self.__WB_MANIFEST)
 
 workbox.routing.registerRoute(
 	/.*about/,

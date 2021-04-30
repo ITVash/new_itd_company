@@ -101,8 +101,8 @@ const Service: React.FC = observer(
 			 */
 			if (service) {
 				let webTypes = slide.current!.querySelectorAll(".web_design")
-				let ul = webTypes.item(count)
-				let subItem = ul.childNodes
+				let ul = webTypes && webTypes.item(count)
+				let subItem: any = ul && ul.childNodes
 				if (window.innerWidth > 800) {
 					let width_circle = ul.querySelector(".number")!.clientWidth
 					let cur_x = width_circle + 25
@@ -147,7 +147,9 @@ const Service: React.FC = observer(
 					 */
 					let height = ul.clientHeight / Math.sqrt(2)
 					let width = ul.clientHeight / Math.sqrt(2)
-					let rec = slide.current!.querySelectorAll(".rectangle").item(count)
+					let rec: any = slide
+						.current!.querySelectorAll(".rectangle")
+						.item(count)
 					rec.style.cssText = `width: ${
 						height > width ? height : width
 					}px; height: ${height > width ? height : width}px;`
